@@ -24,7 +24,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Активировать бонус
+                Запустить модальное окно
             </button>
 
             <!-- Modal -->
@@ -32,21 +32,58 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Регистрация / авторизация</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            ...
+
+                        <form action="reg.php" method="post">
+
+                            <div class="logModal-input-wrap">
+                                <div class="logModal-row">
+                                    <div class="logModal-row__text form-text">телефон:</div>
+                                    <input type="text" name="phone" placeholder="ваш телефон" size="25" />
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="logModal-input-wrap">
+                                <div class="logModal-row">
+                                    <div class="logModal-row__text form-text">email:</div>
+                                    <input type="text" name="email" placeholder="ваш email" size="25" />
+                                </div>
+                            </div>
+                        
+                            <hr>
+
+                            <div class="logModal-input-wrap sms-code__form hide">
+                                <div class="logModal-row">
+                                    <div class="logModal-row__text form-text">код смс:</div>
+                                    <input type="text" name="scode" placeholder="5-ти значный код" size="25" />
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <input type="checkbox">
+                            <span class="chechbox-text">согласие на обработку данных</span>
+                            <input type="submit" value="Войти">
+                        </form>
+
                         </div>
+
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                            <button type="button" class="btn btn-primary save">Далее</button>
                         </div>
+
                     </div>
                 </div>
             </div>
+            <!-- end Modal -->
 
         </main>
 

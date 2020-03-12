@@ -37,8 +37,8 @@
 /* Specification */
 
 body {
+    color: black;
     font-family: 'Etelka Text Pro';
-    color: white;
     background-color: rgb(253, 144, 41);
     font-size: 12px;
 }
@@ -54,5 +54,17 @@ div, p, span, a, input, button {
 /* Hero section */
 
 .header {
+
+}
+
+.form-text {
+    
+}
+
+.hide {
+    display: none;
+}
+
+.chechbox-text {
     
 }
