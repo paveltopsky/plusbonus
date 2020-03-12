@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Etelka Text Pro';
+    src: url('../fonts/EtelkaTextPro.eot');
+    src: url('../fonts/EtelkaTextPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/EtelkaTextPro.woff2') format('woff2'),
+        url('../fonts/EtelkaTextPro.woff') format('woff'),
+        url('../fonts/EtelkaTextPro.ttf') format('truetype'),
+        url('../fonts/EtelkaTextPro.svg#EtelkaTextPro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Etelka Wide Medium Pro';
+    src: url('../fonts/EtelkaWideMediumPro.eot');
+    src: url('../fonts/EtelkaWideMediumPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/EtelkaWideMediumPro.woff2') format('woff2'),
+        url('../fonts/EtelkaWideMediumPro.woff') format('woff'),
+        url('../fonts/EtelkaWideMediumPro.ttf') format('truetype'),
+        url('../fonts/EtelkaWideMediumPro.svg#EtelkaWideMediumPro') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CharterC';
+    src: url('../fonts/CharterC.eot');
+    src: url('../fonts/CharterC.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CharterC.woff2') format('woff2'),
+        url('../fonts/CharterC.woff') format('woff'),
+        url('../fonts/CharterC.ttf') format('truetype'),
+        url('../fonts/CharterC.svg#CharterC') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Specification */
+
+body {
+    font-family: 'Etelka Text Pro';
+    color: white;
+    background-color: rgb(253, 144, 41);
+    font-size: 12px;
+}
+
+div, p, span, a, input, button {
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 7%;
+}
+
+/* Hero section */
+
+.header {
+    
+}
