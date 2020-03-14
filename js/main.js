@@ -1,21 +1,20 @@
 var save = document.querySelector('.save');
 var input = document.querySelector('.sms-code__form');
 
-save.addEventListener('click', openSmsForm);
-
 function openSmsForm() {
     input.classList.remove('hide');
 }
 
-// open reg modal
+// open registration form
 
-var btnToModalReg = document.querySelector('.reg-btn');
-var modalReg = document.querySelector('.reg-modal');
+var btnToFormReg = document.querySelector('.open-authorization__btn');
+var formReg = document.querySelector('.reg__form');
 
-btnToModalReg.addEventListener('click', openRegModal);
+btnToFormReg.addEventListener('click', openRegModal);
 
 function openRegModal() {
-    modalReg.classList.add('regModal-show');
+    formReg.classList.add('regModal-show');
+    btnToFormReg.classList.add('hide');
 }
 
 // show regBtn

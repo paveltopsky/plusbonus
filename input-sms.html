@@ -32,38 +32,19 @@
 
     <main class="main">
         <div class="container">
-            <div class="open-authorization__btn open-btn">
-                Активировать бонус
-            </div>
 
-            <!-- registration form -->
-            <form action="reg.php" method="post" class="reg__form data-form hide">
-                <div class="form__title">Авторизация</div>
+            <!-- sms-code form -->
+            <form action="reg.php" method="post" class="reg__form data-form">
+                <div class="form__title">Подтверждение</div>
                 
-                <input type="text" name="phone" placeholder="Телефон..." />
-
-                <input type="text" name="email" placeholder="E-mail..." /> <br>
-
-                <input type="checkbox" id="checkbox" />
-                <label for="checkbox"><span class="ui"></span></label><label for="">согласие с условиями</label>
+                <input type="text" name="phone" placeholder="Код из sms..." />
 
                 <div class="come-in__wrap">
-                    <input type="submit" value="Выслать sms-код подтверждения" class="confirm-phone__btn">
+                    <input type="submit" value="Авторизоваться" class="confirm-phone__btn">
                 </div>
             </form>
-            <!-- end registration form -->
+            <!-- end sms-code form -->
 
-            <!-- promocode form -->
-            <form action="reg.php" method="post" class="reg__form data-form hide">
-                <div class="form__title">Активация бонуса</div>
-                
-                <input type="text" name="phone" placeholder="Промокод..." />
-
-                <div class="come-in__wrap">
-                    <input type="submit" value="Открыть приз" class="confirm-phone__btn">
-                </div>
-            </form>
-            <!-- end promocode form -->
         </div>
         <!-- /.container -->
     </main>
@@ -71,26 +52,11 @@
 
     <footer class="footer">
         <div class="container">
+
             <div class="open-authorization__btn open-btn">
                 Стать партнёром
             </div>
-            <!-- feedback form -->
-            <form action="reg.php" method="post" class="feedback__form data-form hide">
-                <div class="form__title">Стать партнёром</div>
-                
-                <input type="text" name="phone" placeholder="Ваше имя..." />
 
-                <input type="text" name="email" placeholder="Телефон..." />
-
-                <input type="text" name="email" placeholder="E-mail..." />
-
-                <textarea type="text" name="message" placeholder="Сообщение..." class="feedback__textarea"></textarea>
-
-                <div class="come-in__wrap">
-                    <input type="submit" value="Отправить предложение" class="confirm-phone__btn">
-                </div>
-            </form>
-            <!-- end feedback form -->
         </div>
         <!-- /.container -->
     </footer>
