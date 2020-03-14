@@ -155,23 +155,7 @@ input[type="text"] {
     background-color: #fff;
     padding: 20px;
     border-radius: 15px;
-}
-
-button[data-target="#exampleModal"] {
-    background-color: #fff;
-    margin: 0 auto;
-}
-
-/* button[data-target="#exampleModal"]:link,
-button[data-target="#exampleModal"]:visited,
-button[data-target="#exampleModal"]:hover,
-button[data-target="#exampleModal"]:active,
-button[data-target="#exampleModal"]:disabled {
-    background-color: #fff;
-} */
-
-#exampleModal {
-    color: black;
+    animation: showForm 1s linear forwards;
 }
 
 .form-text {
@@ -180,17 +164,7 @@ button[data-target="#exampleModal"]:disabled {
     margin-bottom: 5px;
 }
 
-.reg-modal {
-    margin: 0 auto;
-    width: 400px;
-}
-
-.regModal-show {
-    display: block;
-    animation: showRegModal 1s linear forwards;
-}
-  
-@keyframes showRegModal {
+@keyframes showForm {
     0% {
       opacity: 0;
     }
@@ -230,7 +204,4 @@ textarea[type="text"] {
 }
 
 /* MODAL
-==================================================*/
-
-/* FORM
 ==================================================*/

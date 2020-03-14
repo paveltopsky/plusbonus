@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>PLUSБОНУС</title>
+    <!-- Normalize CSS -->
     <link rel="stylesheet" href="css/normalize.css">
+    <!-- Main style File -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Media Queries File -->
     <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/style-form.css">
+    <!-- Bootstrap4 CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -27,218 +32,105 @@
 
     <main class="main">
         <div class="container">
-
-        <?php 
-
-            if($_COOKIE['user'] == ''): ?>
-            
-            <div class="wrap-wrap">
-                <div class="btn-wrap reg-btn">
-                    <button type="button" class="btn" data-toggle="modal">
-                        Авторизация
-                    </button>
-                </div>
+            <div class="open-authorization__btn open-btn">
+                Активировать бонус
             </div>
 
-        <?php else: ?>
+            <!-- registration form -->
+            <form action="reg.php" method="post" class="reg__form data-form hide">
+                <div class="form__title">Авторизация</div>
 
-            <form action="reg.php" method="post">
+                <input type="text" name="phone" placeholder="Телефон..." />
 
-                <div class="logModal-input-wrap">
-                    <div class="logModal-row">
-                        <div class="logModal-row__text form-text">промокод:</div>
-                        <input type="text" name="phone" placeholder="промокод" size="25" />
-                    </div>
+                <input type="text" name="email" placeholder="E-mail..." /> <br>
+
+                <input type="checkbox" id="checkbox" />
+                <label for="checkbox"><span class="ui"></span></label><label for="">согласие с условиями</label>
+
+                <div class="come-in__wrap">
+                    <input type="submit" value="Выслать sms-код подтверждения" class="confirm-phone__btn">
                 </div>
-
-                <hr>
-                
-                <input type="submit" value="Ввести">
             </form>
+            <!-- end registration form -->
 
-        <?php endif; ?>            
+            <!-- promocode form -->
+            <form action="reg.php" method="post" class="promocode__form data-form hide">
+                <div class="form__title">Активация бонуса</div>
 
-            <form action="reg.php" method="post" class="reg-modal hide">
+                <input type="text" name="phone" placeholder="Промокод..." />
 
-                <div class="logModal-input-wrap">
-                    <div class="logModal-row">
-                        <div class="logModal-row__text form-text">телефон:</div>
-                        <input type="text" name="phone" placeholder="ваш телефон" size="25" />
-                    </div>
+                <div class="come-in__wrap">
+                    <input type="submit" value="Открыть приз" class="confirm-phone__btn">
                 </div>
-
-                <hr>
-
-                <div class="logModal-input-wrap">
-                    <div class="logModal-row">
-                        <div class="logModal-row__text form-text">email:</div>
-                        <input type="text" name="email" placeholder="ваш email" size="25" />
-                    </div>
-                </div>
-            
-                <hr>
-
-                <div class="logModal-input-wrap sms-code__form">
-                    <div class="logModal-row">
-                        <div class="logModal-row__text form-text">код смс:</div>
-                        <input type="text" name="scode" placeholder="5-ти значный код" size="25" />
-                    </div>
-                </div>
-
-                <hr>
-
-                <input type="checkbox">
-                <span class="chechbox-text">согласие на обработку данных</span> <br> <br>
-                <div class="come-in__wrap hide">
-                    <input type="submit" value="Войти" class="come-in__btn">
-                </div>
-                <div class="confirm-phone__btn">Выслать код подтверждения</div>
-
             </form>
-
-            <!-- start bonus-code form -->
-            <form action="reg.php" method="post" class="hide">
-
-                <div class="logModal-input-wrap">
-                    <div class="logModal-row">
-                        <div class="logModal-row__text form-text">промокод:</div>
-                        <input type="text" name="phone" placeholder="промокод" size="25" />
-                    </div>
-                </div>
-
-                <hr>
-                
-                <input type="submit" value="Ввести">
-            </form>
-            <!-- end bonus-code form -->
-
+            <!-- end promocode form -->
         </div>
         <!-- /.container -->
     </main>
     <!-- /.main -->
 
-    <div class="container">
-        <main class="main">
-
-            <!-- Button trigger modal -->
-            <!-- <div class="wrap-wrap">
-                <div class="btn-wrap">
-                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
-                        Активировать бонус
-                    </button>
-                </div>
-            </div> -->
-
-            
-
-            <!-- reg Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Авторизация</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-
-                        <form action="reg.php" method="post">
-
-                            <div class="logModal-input-wrap">
-                                <div class="logModal-row">
-                                    <div class="logModal-row__text form-text">телефон:</div>
-                                    <input type="text" name="phone" placeholder="ваш телефон" size="25" />
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <div class="logModal-input-wrap">
-                                <div class="logModal-row">
-                                    <div class="logModal-row__text form-text">email:</div>
-                                    <input type="text" name="email" placeholder="ваш email" size="25" />
-                                </div>
-                            </div>
-                        
-                            <hr>
-
-                            <div class="logModal-input-wrap sms-code__form hide">
-                                <div class="logModal-row">
-                                    <div class="logModal-row__text form-text">код смс:</div>
-                                    <input type="text" name="scode" placeholder="5-ти значный код" size="25" />
-                                </div>
-                            </div>
-
-                            <hr>
-
-                            <input type="checkbox" name="permission" value="yes">
-                            <span class="chechbox-text">согласие на обработку данных</span>
-                            <input type="submit" value="Войти">
-                        </form>
-
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                            <button type="button" class="btn btn-primary save">Далее</button>
-                        </div>
-
-                    </div>
-                </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="open-partner__btn open-btn">
+                Стать партнёром
             </div>
-            <!-- end Modal -->
+            <!-- feedback form -->
+            <form action="reg.php" method="post" class="feedback__form data-form hide">
+                <div class="form__title">Стать партнёром</div>
 
-            <!-- bonus code Modal-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">ввод кода</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
+                <input type="text" name="phone" placeholder="Ваше имя..." />
 
-                        <form action="reg.php" method="post">
+                <input type="text" name="email" placeholder="Телефон..." />
 
-                            <div class="logModal-input-wrap">
-                                <div class="logModal-row">
-                                    <div class="logModal-row__text form-text">промокод:</div>
-                                    <input type="text" name="phone" placeholder="ваш телефон" size="25" />
-                                </div>
-                            </div>
+                <input type="text" name="email" placeholder="E-mail..." />
 
-                            <hr>
+                <textarea type="text" name="message" placeholder="Сообщение..." class="feedback__textarea"></textarea>
 
-                            <input type="submit" value="Войти">
-                        </form>
-
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                            <button type="button" class="btn btn-primary save">Далее</button>
-                        </div>
-
-                    </div>
+                <div class="come-in__wrap">
+                    <input type="submit" value="Отправить предложение" class="confirm-phone__btn">
                 </div>
-            </div>
-            <!-- end bonus code Modal-->
+            </form>
+            <!-- end feedback form -->
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- /.footer -->
 
-        </main>
+    <!-- JQuery connection -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <!-- Bootstrap4 connection -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <!-- Other scripts -->
+    <script>
+        var btnToRegForm = document.querySelector('.open-authorization__btn'),
+            btnToFeedbackForm = document.querySelector('.open-partner__btn'),
+            regForm = document.querySelector('.reg__form'),
+            feedbackForm = document.querySelector('.feedback__form');
 
-        <footer class="footer">
+        btnToRegForm.addEventListener('click', openRegForm);
+        btnToFeedbackForm.addEventListener('click', openFeedbackForm);
 
-        </footer>
-    </div>
+        function openRegForm() {
+            regForm.classList.remove('hide');
+            btnToRegForm.classList.add('hide');
+            feedbackForm.classList.add('hide');
+            btnToFeedbackForm.classList.remove('hide');
+        }
 
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+        function openFeedbackForm() {
+            feedbackForm.classList.remove('hide');
+            btnToFeedbackForm.classList.add('hide');
+            regForm.classList.add('hide');
+            btnToRegForm.classList.remove('hide');
+        }
+    </script>
 
 </body>
 
