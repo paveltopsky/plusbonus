@@ -28,35 +28,13 @@
     <main class="main">
         <div class="container">
 
-        <?php 
-
-            if($_COOKIE['user'] == ''): ?>
-            
             <div class="wrap-wrap">
                 <div class="btn-wrap reg-btn">
                     <button type="button" class="btn" data-toggle="modal">
-                        Авторизация
+                        Активировать
                     </button>
                 </div>
             </div>
-
-        <?php else: ?>
-
-            <form action="reg.php" method="post">
-
-                <div class="logModal-input-wrap">
-                    <div class="logModal-row">
-                        <div class="logModal-row__text form-text">промокод:</div>
-                        <input type="text" name="phone" placeholder="промокод" size="25" />
-                    </div>
-                </div>
-
-                <hr>
-                
-                <input type="submit" value="Ввести">
-            </form>
-
-        <?php endif; ?>            
 
             <form action="reg.php" method="post" class="reg-modal hide">
 
@@ -78,7 +56,7 @@
             
                 <hr>
 
-                <div class="logModal-input-wrap sms-code__form">
+                <div class="logModal-input-wrap sms-code__form hide">
                     <div class="logModal-row">
                         <div class="logModal-row__text form-text">код смс:</div>
                         <input type="text" name="scode" placeholder="5-ти значный код" size="25" />
@@ -172,7 +150,7 @@
 
                             <hr>
 
-                            <input type="checkbox" name="permission" value="yes">
+                            <input type="checkbox">
                             <span class="chechbox-text">согласие на обработку данных</span>
                             <input type="submit" value="Войти">
                         </form>

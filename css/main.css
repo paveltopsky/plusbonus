@@ -34,27 +34,103 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Etelka Wide Text Pro';
+    src: url('../fonts/EtelkaWideTextPro.eot');
+    src: url('../fonts/EtelkaWideTextPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/EtelkaWideTextPro.woff2') format('woff2'),
+        url('../fonts/EtelkaWideTextPro.woff') format('woff'),
+        url('../fonts/EtelkaWideTextPro.ttf') format('truetype'),
+        url('../fonts/EtelkaWideTextPro.svg#EtelkaWideTextPro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /* Specification */
 
 body {
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: 'Etelka Text Pro';
-    background-color: rgb(253, 144, 41);
-    font-size: 12px;
+    background: #FE911C;
+    background: -webkit-linear-gradient(top, #FE911C, #FFA92D);
+    background: -moz-linear-gradient(top, #FE911C, #FFA92D);
+    background: linear-gradient(to bottom, #FE911C, #FFA92D);
+    font-size: 15px;
+    min-height: 100vh;
 }
 
 div, p, span, a, input, button {
     box-sizing: border-box;
 }
 
-.container {
+/* .container {
     margin: 0 7%;
-}
+} */
 
 /* Hero section */
 
 .header {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
 
+.header__title {
+    text-align: center;
+    font-size: 3.5em;
+    font-family: 'CharterC';
+    letter-spacing: 2px;
+}
+
+.header__title--bold {
+    font-weight: 900;
+}
+
+.header__subtitle {
+    text-align: center;
+    font-family: 'Etelka Wide Text Pro';
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.header__place {
+    height: 38px;
+    width: 250px;
+    background-color: #bebec0;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btn-wrap {
+    display: inline-block;
+}
+
+.wrap-wrap {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+button[data-target="#exampleModal"] {
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+/* button[data-target="#exampleModal"]:link,
+button[data-target="#exampleModal"]:visited,
+button[data-target="#exampleModal"]:hover,
+button[data-target="#exampleModal"]:active,
+button[data-target="#exampleModal"]:disabled {
+    background-color: #fff;
+} */
+
+#exampleModal {
+    color: black;
 }
 
 .form-text {
@@ -67,4 +143,31 @@ div, p, span, a, input, button {
 
 .chechbox-text {
     
+}
+
+.reg-modal {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.regModal-show {
+    display: block;
+    animation: showRegModal 1s linear forwards;
+}
+  
+@keyframes showRegModal {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.confirm-phone__btn {
+    display: inline-block;
+    background-color: rgb(64, 124, 255);
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
 }
