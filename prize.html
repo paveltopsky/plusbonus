@@ -9,64 +9,34 @@
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- Main style File -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <!-- Media Queries File -->
     <link rel="stylesheet" href="css/media.css">
-    <link rel="stylesheet" href="css/style-form.css">
+    <link rel="stylesheet" href="css/prize.css">
     <!-- Bootstrap4 CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="container">
-            <div class="header__title">PLUS<span class="header__title--bold">БОНУС</span></div>
-            <div class="header__subtitle">купил - бонус получил</div>
-            <div class="header__place"></div>
-        </div>
-        <!-- /.container -->
-    </header>
-    <!-- /.header -->
-
     <main class="main">
         <div class="container">
 
-            
+            <canvas id="world"></canvas>
+
+            <div class="giftbox__wrap">
+                <img src="img/giftbox.png" width="100">
+            </div>
+
+            <div class="prize__wrap hide">
+                Поздравляем!<br> Проверьте почту!
+            </div>
 
         </div>
         <!-- /.container -->
     </main>
     <!-- /.main -->
-
-    <footer class="footer">
-        <div class="container">
-
-            <div class="open-partner__btn open-btn">
-                Стать партнёром
-            </div>
-            <!-- feedback form -->
-            <form action="reg.php" method="post" class="feedback__form data-form hide">
-                <div class="form__title">Стать партнёром</div>
-
-                <input type="text" name="phone" placeholder="Ваше имя..." />
-
-                <input type="text" name="email" placeholder="Телефон..." />
-
-                <input type="text" name="email" placeholder="E-mail..." />
-
-                <textarea type="text" name="message" placeholder="Сообщение..." class="feedback__textarea"></textarea>
-
-                <div class="come-in__wrap">
-                    <input type="submit" value="Отправить предложение" class="confirm-phone__btn">
-                </div>
-            </form>
-            <!-- end feedback form -->
-        </div>
-        <!-- /.container -->
-    </footer>
-    <!-- /.footer -->
 
     <!-- JQuery connection -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -80,7 +50,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <!-- Other scripts -->
-    <script src="js/main.js"></script>
+    <script src="js/prize.js"></script>
 
 </body>
 

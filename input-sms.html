@@ -23,6 +23,7 @@
     <header class="header">
         <div class="container">
             <div class="header__title">PLUS<span class="header__title--bold">БОНУС</span></div>
+
             <div class="header__subtitle">купил - бонус получил</div>
             <div class="header__place"></div>
         </div>
@@ -34,8 +35,10 @@
         <div class="container">
 
             <!-- sms-code form -->
-            <form action="reg.php" method="post" class="reg__form data-form">
-                <div class="form__title">Подтверждение</div>
+            <form action="reg.php" method="post" class="confirm__form data-form">
+                <div class="form-title__wrap">
+                    <div class="form__title">Подтверждение</div>
+                </div>
 
                 <input type="text" name="phone" placeholder="Код из sms..." />
 
@@ -58,7 +61,11 @@
             </div>
             <!-- feedback form -->
             <form action="reg.php" method="post" class="feedback__form data-form hide">
-                <div class="form__title">Стать партнёром</div>
+                <div class="form-title__wrap">
+                    <div class="form__title">Стать партнёром</div>
+                    <img src="img/back.png" width="23" class="form__back-img">
+                </div>
+
 
                 <input type="text" name="phone" placeholder="Ваше имя..." />
 
@@ -91,6 +98,22 @@
     </script>
     <!-- Other scripts -->
     <script src="js/main.js"></script>
+
+    <script>
+        var btnToFeedbackForm = document.querySelector('.open-partner__btn'),
+            confirmForm = document.querySelector('.confirm__form');
+
+        Array.from(document.querySelectorAll('.form__back-img'), function (el) {
+            el.onclick = function () {
+                closeForm();
+            }
+        })
+
+        function closeForm() {
+            feedbackForm.classList.add('hide');
+            btnToFeedbackForm.classList.remove('hide');
+        }
+    </script>
 
 </body>
 

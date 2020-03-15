@@ -1,0 +1,137 @@
+/* FONT CONNECTION
+==================================================*/
+
+@font-face {
+    font-family: 'Etelka Text Pro';
+    src: url('../fonts/EtelkaTextPro.eot');
+    src: url('../fonts/EtelkaTextPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/EtelkaTextPro.woff2') format('woff2'),
+        url('../fonts/EtelkaTextPro.woff') format('woff'),
+        url('../fonts/EtelkaTextPro.ttf') format('truetype'),
+        url('../fonts/EtelkaTextPro.svg#EtelkaTextPro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Etelka Wide Medium Pro';
+    src: url('../fonts/EtelkaWideMediumPro.eot');
+    src: url('../fonts/EtelkaWideMediumPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/EtelkaWideMediumPro.woff2') format('woff2'),
+        url('../fonts/EtelkaWideMediumPro.woff') format('woff'),
+        url('../fonts/EtelkaWideMediumPro.ttf') format('truetype'),
+        url('../fonts/EtelkaWideMediumPro.svg#EtelkaWideMediumPro') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Etelka Wide Text Pro';
+    src: url('../fonts/EtelkaWideTextPro.eot');
+    src: url('../fonts/EtelkaWideTextPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/EtelkaWideTextPro.woff2') format('woff2'),
+        url('../fonts/EtelkaWideTextPro.woff') format('woff'),
+        url('../fonts/EtelkaWideTextPro.ttf') format('truetype'),
+        url('../fonts/EtelkaWideTextPro.svg#EtelkaWideTextPro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CharterC';
+    src: url('../fonts/CharterC.eot');
+    src: url('../fonts/CharterC.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CharterC.woff2') format('woff2'),
+        url('../fonts/CharterC.woff') format('woff'),
+        url('../fonts/CharterC.ttf') format('truetype'),
+        url('../fonts/CharterC.svg#CharterC') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    font-family: 'Etelka Text Pro';
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #111 !important;
+}
+
+canvas {
+    position: absolute;
+    z-index: 1;
+}
+
+.hide {
+    display: none;
+}
+
+.giftbox__wrap {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+    padding-top: 100px;
+}
+
+.giftbox__wrap > img {
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.prize__wrap {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 20px;
+    border: 6px solid #00CC33;
+    color: #00CC33;
+    width: 250px;
+    z-index: 1000000;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.anim-open {
+    display: block;
+    animation: openPrize 1s linear forwards;
+}
+
+.anim-close {
+    display: block;
+    animation: openPrize 1s linear forwards;
+}
+
+@keyframes openPrize {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes showPrize {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
