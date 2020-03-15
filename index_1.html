@@ -23,7 +23,6 @@
     <header class="header">
         <div class="container">
             <div class="header__title">PLUS<span class="header__title--bold">БОНУС</span></div>
-
             <div class="header__subtitle">купил - бонус получил</div>
             <div class="header__place"></div>
         </div>
@@ -33,21 +32,38 @@
 
     <main class="main">
         <div class="container">
+            <div class="open-authorization__btn open-btn">
+                Активировать бонус
+            </div>
 
-            <!-- sms-code form -->
-            <form action="reg.php" method="post" class="confirm__form data-form">
-                <div class="form-title__wrap">
-                    <div class="form__title">Подтверждение</div>
-                </div>
+            <!-- registration form -->
+            <form action="" method="post" class="reg__form data-form hide">
+                <div class="form__title">Авторизация</div>
 
-                <input type="text" name="phone" placeholder="Код из sms..." />
+                <input type="text" name="phone" placeholder="Телефон..." />
+
+                <input type="text" name="email" placeholder="E-mail..." /> <br>
+
+                <input type="checkbox" id="checkbox" />
+                <label for="checkbox"><span class="ui"></span></label><label for="">согласие с условиями</label>
 
                 <div class="come-in__wrap">
-                    <input type="submit" value="Авторизоваться" class="confirm-phone__btn">
+                    <input type="submit" value="Выслать sms-код подтверждения" class="confirm-phone__btn">
                 </div>
             </form>
-            <!-- end sms-code form -->
+            <!-- end registration form -->
 
+            <!-- promocode form -->
+            <form action="" method="post" class="promocode__form data-form hide">
+                <div class="form__title">Активация бонуса</div>
+
+                <input type="text" name="phone" placeholder="Промокод..." />
+
+                <div class="come-in__wrap">
+                    <input type="submit" value="Открыть приз" class="confirm-phone__btn">
+                </div>
+            </form>
+            <!-- end promocode form -->
         </div>
         <!-- /.container -->
     </main>
@@ -55,17 +71,12 @@
 
     <footer class="footer">
         <div class="container">
-
             <div class="open-partner__btn open-btn">
                 Стать партнёром
             </div>
             <!-- feedback form -->
-            <form action="reg.php" method="post" class="feedback__form data-form hide">
-                <div class="form-title__wrap">
-                    <div class="form__title">Стать партнёром</div>
-                    <img src="img/back.png" width="23" class="form__back-img">
-                </div>
-
+            <form action="" method="post" class="feedback__form data-form hide">
+                <div class="form__title">Стать партнёром</div>
 
                 <input type="text" name="phone" placeholder="Ваше имя..." />
 
@@ -97,21 +108,27 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <!-- Other scripts -->
-    <script src="js/main.js"></script>
-
     <script>
-        var btnToFeedbackForm = document.querySelector('.open-partner__btn'),
-            confirmForm = document.querySelector('.confirm__form');
+        var btnToRegForm = document.querySelector('.open-authorization__btn'),
+            btnToFeedbackForm = document.querySelector('.open-partner__btn'),
+            regForm = document.querySelector('.reg__form'),
+            feedbackForm = document.querySelector('.feedback__form');
 
-        Array.from(document.querySelectorAll('.form__back-img'), function (el) {
-            el.onclick = function () {
-                closeForm();
-            }
-        })
+        btnToRegForm.addEventListener('click', openRegForm);
+        btnToFeedbackForm.addEventListener('click', openFeedbackForm);
 
-        function closeForm() {
+        function openRegForm() {
+            regForm.classList.remove('hide');
+            btnToRegForm.classList.add('hide');
             feedbackForm.classList.add('hide');
             btnToFeedbackForm.classList.remove('hide');
+        }
+
+        function openFeedbackForm() {
+            feedbackForm.classList.remove('hide');
+            btnToFeedbackForm.classList.add('hide');
+            regForm.classList.add('hide');
+            btnToRegForm.classList.remove('hide');
         }
     </script>
 

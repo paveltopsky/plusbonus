@@ -1,3 +1,23 @@
+<?php
+  $userhash = $_COOKIE["userhash"]; // Узнаём, что за пользователь
+  if (!$userhash) {
+    /* Если это новый пользователь, то добавляем ему cookie, уникальные для него */
+    $userhash = uniqid();
+    setcookie("userhash", $userhash, 0x6FFFFFFF);
+  }
+  $ip = ip2long($_SERVER["REMOTE_ADDR"]); // Преобразуем IP в число
+  $mysql = new mysqli("localhost", "root", "", "datauser"); // Соединяемся с базой
+  $mysql->query("INSERT INTO `visits` ( `ip`) VALUES ('$ip')"); // Добавляем запись
+  $result = $mysql->query("SELECT * FROM visits WHERE `ip` = '$ip'");
+  $datainfo = $result->fetch_assoc () ;
+  $counteruser= $datainfo ['id_user'];
+  $mysql->query("UPDATE stats SET visit = visit + 1 ");
+  $mysql->close(); // Закрываем соединение
+  
+      
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -32,20 +52,29 @@
 
     <main class="main">
         <div class="container">
+        <?php if($_COOKIE['nuser'] == ''):?> 
             <div class="open-authorization__btn open-btn">
                 Активировать бонус
             </div>
 
             <!-- registration form -->
             <form action="reg.php" method="post" class="reg__form data-form hide">
-                <div class="form__title">Авторизация</div>
+                <div class="form-title__wrap">
+                    <div class="form__title">Авторизация</div>
+                    <img src="img/back.png" width="23" class="form__back-img">
+                </div>
 
                 <input type="text" name="phone" placeholder="Телефон..." />
 
                 <input type="text" name="email" placeholder="E-mail..." /> <br>
 
-                <input type="checkbox" id="checkbox" />
-                <label for="checkbox"><span class="ui"></span></label><label for="">согласие с условиями</label>
+                <input type="checkbox" id="checkbox" name="permission" value="yes" />
+                <label for="checkbox"><span class="ui"></span></label>
+                <label for="">
+                    <button type="button" class="conditions__btn" data-toggle="modal" data-target="#exampleModalLong">
+                        СОГЛАСИЕ С УСЛОВИЯМИ
+                    </button>
+                </label>
 
                 <div class="come-in__wrap">
                     <input type="submit" value="Выслать sms-код подтверждения" class="confirm-phone__btn">
@@ -53,17 +82,106 @@
             </form>
             <!-- end registration form -->
 
+            <!-- Conditions Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Условия использования</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                            Это согласие с условиями, длинное содержимое может прокручиваться
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="js/openRegForm.js"></script>
+            <?php else: ?>
             <!-- promocode form -->
-            <form action="reg.php" method="post" class="promocode__form data-form hide">
-                <div class="form__title">Активация бонуса</div>
+            <form action="promo.php" method="post" class="promocode__form data-form ">
+                <div class="form-title__wrap">
+                    <div class="form__title">Активация бонуса</div>
+                </div>
 
-                <input type="text" name="phone" placeholder="Промокод..." />
+                <input type="text" name="promocode" placeholder="Промокод..." />
 
                 <div class="come-in__wrap">
                     <input type="submit" value="Открыть приз" class="confirm-phone__btn">
                 </div>
             </form>
+            <a href="exit.php">ВЫЙТИ</a>
             <!-- end promocode form -->
+            <?php endif; ?>
         </div>
         <!-- /.container -->
     </main>
@@ -75,12 +193,15 @@
                 Стать партнёром
             </div>
             <!-- feedback form -->
-            <form action="reg.php" method="post" class="feedback__form data-form hide">
-                <div class="form__title">Стать партнёром</div>
+            <form action="partner.php" method="post" class="feedback__form data-form hide">
+                <div class="form-title__wrap">
+                    <div class="form__title">Стать партнёром</div>
+                    <img src="img/back.png" width="23" class="form__back-img">
+                </div>
 
-                <input type="text" name="phone" placeholder="Ваше имя..." />
+                <input type="text" name="name" placeholder="Ваше имя..." />
 
-                <input type="text" name="email" placeholder="Телефон..." />
+                <input type="text" name="phone" placeholder="Телефон..." />
 
                 <input type="text" name="email" placeholder="E-mail..." />
 
@@ -109,26 +230,26 @@
     </script>
     <!-- Other scripts -->
     <script>
-        var btnToRegForm = document.querySelector('.open-authorization__btn'),
-            btnToFeedbackForm = document.querySelector('.open-partner__btn'),
-            regForm = document.querySelector('.reg__form'),
+        var btnToFeedbackForm = document.querySelector('.open-partner__btn'),
             feedbackForm = document.querySelector('.feedback__form');
 
-        btnToRegForm.addEventListener('click', openRegForm);
         btnToFeedbackForm.addEventListener('click', openFeedbackForm);
 
-        function openRegForm() {
-            regForm.classList.remove('hide');
-            btnToRegForm.classList.add('hide');
-            feedbackForm.classList.add('hide');
-            btnToFeedbackForm.classList.remove('hide');
-        }
 
         function openFeedbackForm() {
             feedbackForm.classList.remove('hide');
             btnToFeedbackForm.classList.add('hide');
-            regForm.classList.add('hide');
-            btnToRegForm.classList.remove('hide');
+        }
+
+        Array.from(document.querySelectorAll('.form__back-img'), function (el) {
+            el.onclick = function () {
+                closeForm();
+            }
+        })
+
+        function closeForm() {
+            feedbackForm.classList.add('hide');
+            btnToFeedbackForm.classList.remove('hide');
         }
     </script>
 

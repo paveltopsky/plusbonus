@@ -1,3 +1,22 @@
+<?php
+  $userhash = $_COOKIE["userhash"]; // Узнаём, что за пользователь
+  if (!$userhash) {
+    /* Если это новый пользователь, то добавляем ему cookie, уникальные для него */
+    $userhash = uniqid();
+    setcookie("userhash", $userhash, 0x6FFFFFFF);
+  }
+  $ip = ip2long($_SERVER["REMOTE_ADDR"]); // Преобразуем IP в число
+  $mysql = new mysqli("localhost", "root", "", "datauser"); // Соединяемся с базой
+  $mysql->query("INSERT INTO `visits` ( `ip`) VALUES ('$ip')"); // Добавляем запись
+  $result = $mysql->query("SELECT * FROM visits WHERE `ip` = '$ip'");
+  $datainfo = $result->fetch_assoc () ;
+  $counteruser= $datainfo ['id_user'];
+  $mysql->query("UPDATE stats SET visit = visit + 1 ");
+  $mysql->close(); // Закрываем соединение
+  
+      
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 

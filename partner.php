@@ -11,7 +11,7 @@ if(!empty($_POST['name']) AND !empty($_POST['email']) AND !empty($_POST['phone']
   $letter .= 'Телефон: '.$_POST['phone'].'\r\n';
   $letter .= 'Сообщение: '.$_POST['message'].'\r\n';
 
-    if(mail ($to, $subject, $message, $headers);){
+    if(mail ($to, $subject, $letter, $headers)){
     header('Location:/');
      } else {
     header('Location:/');
