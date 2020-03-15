@@ -40,16 +40,17 @@
             <form action="" method="post" class="reg__form data-form hide">
                 <div class="form__title">Авторизация</div>
 
-                <input type="text" name="phone" placeholder="Телефон..." />
+                <input type="text" class="fugdgck" name="phone" placeholder="Телефон..." />
 
                 <input type="text" name="email" placeholder="E-mail..." /> <br>
 
-                <input type="checkbox" id="checkbox" />
+                <input type="checkbox" class="myCheckbox" id="checkbox"/>
                 <label for="checkbox"><span class="ui"></span></label><label for="">согласие с условиями</label>
 
                 <div class="come-in__wrap">
-                    <input type="submit" value="Выслать sms-код подтверждения" class="confirm-phone__btn">
+                    <input type="submit" value="Выслать sms-код подтверждения" id="enter" class="confirm-phone__btn">
                 </div>
+                <div class="error__checkbox hide">необходимо согласиться с условиями</div>
             </form>
             <!-- end registration form -->
 
@@ -87,7 +88,7 @@
                 <textarea type="text" name="message" placeholder="Сообщение..." class="feedback__textarea"></textarea>
 
                 <div class="come-in__wrap">
-                    <input type="submit" value="Отправить предложение" class="confirm-phone__btn">
+                    <input id="enter1" type="submit" value="Отправить предложение" class="confirm-phone__btn">
                 </div>
             </form>
             <!-- end feedback form -->
@@ -108,6 +109,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <!-- Other scripts -->
+    <script src="js/validate.js"></script>
     <script>
         var btnToRegForm = document.querySelector('.open-authorization__btn'),
             btnToFeedbackForm = document.querySelector('.open-partner__btn'),

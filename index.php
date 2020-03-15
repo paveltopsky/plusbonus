@@ -77,8 +77,9 @@
                 </label>
 
                 <div class="come-in__wrap">
-                    <input type="submit" value="Выслать sms-код подтверждения" class="confirm-phone__btn">
+                    <input type="submit" value="Выслать sms-код подтверждения" id="enter" class="confirm-phone__btn">
                 </div>
+                <div class="error__checkbox hide">необходимо согласиться с условиями</div>
             </form>
             <!-- end registration form -->
 
@@ -229,6 +230,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <!-- Other scripts -->
+    <script src="js/validate.js"></script>
     <script>
         var btnToFeedbackForm = document.querySelector('.open-partner__btn'),
             feedbackForm = document.querySelector('.feedback__form');

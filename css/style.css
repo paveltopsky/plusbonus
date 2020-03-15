@@ -85,6 +85,7 @@ div, p, span, a, input, button {
     color: rgb(73, 73, 73);
     font-weight: 700;
     font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 input[type="text"] {
@@ -172,7 +173,8 @@ input[type="text"] {
     }
 }
 
-.confirm-phone__btn {
+.confirm-phone__btn,
+.unconfirmed-btn {
     text-align: center;
     font-weight: 700;
     color: #fff;
@@ -182,6 +184,21 @@ input[type="text"] {
     width: 100%;
     margin-top: 10px;
     padding: 10px;
+}
+
+.unconfirmed-btn {
+    background-color: rgb(131, 131, 131);
+}
+
+.error {
+    border: 2px solid red !important;
+}
+
+.error__checkbox {
+    font-size: 0.9em;
+    text-align: center;
+    color: rgb(199, 67, 67);
+    margin-top: 10px;
 }
 
 .form-title__wrap {
