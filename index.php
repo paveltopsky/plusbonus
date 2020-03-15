@@ -68,7 +68,7 @@
 
                 <input type="text" name="email" placeholder="E-mail..." /> <br>
 
-                <input type="checkbox" id="checkbox" name="permission" value="yes" />
+                <input type="checkbox" id="checkbox" name="permission" value="yes" class="myCheckbox" />
                 <label for="checkbox"><span class="ui"></span></label>
                 <label for="">
                     <button type="button" class="conditions__btn" data-toggle="modal" data-target="#exampleModalLong">
@@ -209,7 +209,7 @@
                 <textarea type="text" name="message" placeholder="Сообщение..." class="feedback__textarea"></textarea>
 
                 <div class="come-in__wrap">
-                    <input type="submit" value="Отправить предложение" class="confirm-phone__btn">
+                    <input id="enter1" type="submit" value="Отправить предложение" class="confirm-phone__btn">
                 </div>
             </form>
             <!-- end feedback form -->
